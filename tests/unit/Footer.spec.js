@@ -4,12 +4,13 @@ import Footer from '@/components/Footer.vue'
 describe('Footer.vue Test', () => {
   it('renders message when component is created', () => {
     // render the component
-    const wrapper = shallowMount(Footer)
-
-    // check the name of the component
-    expect(wrapper.name()).toMatch('Footer')
+    const wrapper = shallowMount(Footer, {
+      propsData: {
+          message: 'EstelaR - 2020'
+      }
+    })
 
     // check that the title is rendered
-    expect(wrapper.text()).toMatch('testdriven.io 2019')
+    expect(wrapper.text()).toMatch('EstelaR - 2020')
   })
 })

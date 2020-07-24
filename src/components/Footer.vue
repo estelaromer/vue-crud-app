@@ -7,10 +7,8 @@
 <script>
 export default {
   name: 'Footer',
-  data () {
-    return {
-      message: 'testdriven.io 2019'
-    }
+  props: {
+    message: String
   }
 }
 </script>

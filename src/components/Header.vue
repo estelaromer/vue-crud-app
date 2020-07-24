@@ -7,10 +7,8 @@
 <script>
 export default {
   name: 'Header',
-  data () {
-    return {
-      title: 'Vue Project'
-    }
+  props: {
+    title: String
   }
 }
 </script>

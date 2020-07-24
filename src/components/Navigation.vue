@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 nav {
-  margin: auto;
+  margin: 0 auto;
 }
 
 nav ul {
@@ -25,7 +25,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  padding-left: 1em;
+  padding-left: 2em;
   font-size: 1.5em;
 }
 </style>

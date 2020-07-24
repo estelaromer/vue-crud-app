@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="grid-container">
-      <app-header class="header-title"></app-header>
+      <app-header class="header-title" v-bind:title="title"></app-header>
       <app-navigation class="navigation-links"></app-navigation>
       <app-content class="data-content"></app-content>
-      <app-footer class="footer"></app-footer>
+      <app-footer class="footer" v-bind:message="message"></app-footer>
     </div>
   </div>
 </template>
@@ -23,19 +23,29 @@ export default {
     'app-content': Content,
     'app-footer': Footer
 
+  },
+  data () {
+    return {
+      title: 'Vue Project',
+      message: 'EstelaR - 2020'
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+
+body {
+  background-color: #f7f7f7;
+  color: #292b2c;
+  font-family: Verdana, sans-serif;
+}
+
 .header-title {
   grid-area: header;
 }
@@ -54,6 +64,8 @@ export default {
   grid-template-columns: 35% auto 10%;
   grid-auto-rows: minmax(50px, auto);
   grid-gap: 10px;
+  max-width: 960px;
+  /* margin: auto; */
   grid-template-areas:
     "header  header  header"
     "links   links   links"
@@ -63,6 +75,12 @@ export default {
 
 @media screen and (min-width: 900px) {
   .grid-container {
+    display: grid;
+    grid-template-columns: 35% auto 10%;
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 10px;
+    max-width: 1280px;
+    /* margin: auto; */
     grid-template-areas:
       "header  links   links"
       "data    data    data"

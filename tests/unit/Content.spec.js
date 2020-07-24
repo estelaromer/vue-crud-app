@@ -8,8 +8,5 @@ describe('Content.vue Test', () => {
 
     // check the name of the component
     expect(wrapper.name()).toMatch('Content')
-
-    // check that the title is rendered
-    expect(wrapper.vm.message).toMatch('Content goes here!')
   })
 })
